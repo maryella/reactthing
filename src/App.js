@@ -1,33 +1,35 @@
 import React, { useReducer } from "react";
 import { StateProvider } from "./context";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Page from "./components/homepage";
+import Wrapper from "./components/wrapper";
 import Dashboard from "./components/dashboard";
-import LogIn from "./components/login";
+import LogInForm from "./components/login";
+import LogOut from "./components/logout";
+import NavBar from "./components/navbar";
 
-function App() {
-  const initialState = {
-    logged_in: false
-  };
-
-  const logInReducer = (state, action) => {
-    switch (action.type) {
-      case "log in":
-        return {
-          logged_in: true
-        };
-      default:
-        return state;
-    }
-  };
-
+const App = () => {
   return (
-    <div className="App">
-      <StateProvider value={useReducer(logInReducer, initialState)}>
-        <Page />
-      </StateProvider>
-    </div>
+    <>
+      <Router>
+        <Wrapper>
+          <nav>
+            <NavBar />
+          </nav>
+          <Route exact path="/">
+            <p>home page</p>
+          </Route>
+          <Route exact path="/home">
+            <p>home page</p>
+          </Route>
+          <Route path="/login">
+            <LogInForm />
+          </Route>
+          <Route path="/logout" component={LogOut}></Route>
+          <Route path="/loggedin/dashboard" component={Dashboard}></Route>
+        </Wrapper>
+      </Router>
+    </>
   );
-}
+};
 
 export default App;

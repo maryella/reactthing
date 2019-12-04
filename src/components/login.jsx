@@ -1,33 +1,38 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import StateContext from "../context";
+import { Redirect } from "react-router-dom";
 
-const LogIn = () => {
+const LogInForm = () => {
+  const [redirect, setRedirect] = useState(false);
   const [value, dispatch] = useContext(StateContext);
-  console.log("value", value);
   const changeValue = async () => {
     dispatch({
-      type: "log in",
-      logged_in: true
+      type: "log in"
     });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = e => {
     changeValue();
+    setRedirect(true);
   };
+
   return (
-    <div>
-      <h1>Log In</h1>
-      <label>
-        Email
-        <input type="email" />
-      </label>
-      <label>
-        Password
-        <input type="password" />
-      </label>
-      <button onClick={handleSubmit}>Log In</button>
-    </div>
+    <>
+      {redirect && <Redirect to="/loggedin/dashboard" />}
+      <div>
+        <h1>Log In</h1>
+        <label>
+          Email
+          <input type="email" />
+        </label>
+        <label>
+          Password
+          <input type="password" />
+        </label>
+        <button onClick={handleSubmit}>Log In</button>
+      </div>
+    </>
   );
 };
 
-export default LogIn;
+export default LogInForm;
