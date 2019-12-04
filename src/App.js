@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useReducer } from "react";
+import { StateProvider } from "./context";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Page from "./components/homepage";
+import Dashboard from "./components/dashboard";
+import LogIn from "./components/login";
 
 function App() {
+  const initialState = {
+    logged_in: false
+  };
+
+  const logInReducer = (state, action) => {
+    switch (action.type) {
+      case "log in":
+        return {
+          logged_in: true
+        };
+      default:
+        return state;
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <StateProvider value={useReducer(logInReducer, initialState)}>
+        <Page />
+      </StateProvider>
     </div>
   );
 }
