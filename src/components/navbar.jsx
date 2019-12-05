@@ -9,46 +9,56 @@ const NavBar = props => {
   let { logged_in } = context[0];
   return (
     <>
-      <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-        <Link className="navbar-brand" to="/">
-          Home
-        </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div
-          className="collapse navbar-collapse justify-content-end"
-          id="navbarNavAltMarkup"
-        >
-          <div className="navbar-nav ">
+      <div>
+        <nav className="navbar sticky-top navbar-light navbar-expand-lg navbar-dark">
+          <Link className="navbar-brand homelogo" to="/">
+            LOGO
+          </Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div className="navbar-nav ">
+              <Link className="nav-item nav-link" to="/about">
+                About
+              </Link>
+              <Link className="nav-item nav-link" to="/faq">
+                FAQ
+              </Link>
+              <Link className="nav-item nav-link" to="/contact us">
+                Contact
+              </Link>
+              <Link
+                className="nav-item nav-link dashboard"
+                to="/loggedin/dashboard"
+              ></Link>
+            </div>
+          </div>
+          <div className="form-inline">
             {logged_in ? (
               <>
-                <Link class="nav-item nav-link" to="/dashboard">
-                  Dashboard
-                </Link>
-                <LogOut class="nav-item nav-link" />
+                <LogOut className="nav-item nav-link" />
               </>
             ) : (
               <>
-                <Link className="nav-item nav-link" to="/signup">
-                  Sign Up
-                </Link>
                 <Link className="nav-item nav-link" to="/login">
-                  <button>Log In</button>
+                  <button type="button" className="btn btn-light">
+                    Log In
+                  </button>
                 </Link>
               </>
             )}
           </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </>
   );
 };

@@ -18,7 +18,9 @@ const LogOut = () => {
   return (
     <>
       <div>
-        <button onClick={handleSubmit}>Log Out</button>
+        <button onClick={handleSubmit} type="button" className="btn btn-light">
+          Log Out
+        </button>
       </div>
     </>
   );
