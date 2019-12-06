@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import StateContext from "../context";
-import { Redirect } from "react-router-dom";
 
 const LogOut = () => {
   const [value, dispatch] = useContext(StateContext);

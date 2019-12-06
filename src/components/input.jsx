@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const AddMedForm = () => {
-  const [user_name, setName] = useState("");
-  const [email, setEmail] = useState("");
-
   const addMed = async data => {
     const response = await fetch("http://localhost:8080/api/register", {
       method: "POST",
