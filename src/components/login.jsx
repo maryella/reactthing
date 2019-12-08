@@ -12,7 +12,7 @@ const LogInForm = () => {
   const logIn = async data => {
     const response = await fetch("http://localhost:3000/users/login", {
       method: "POST",
-      credentials: "same-origin",
+      credentials: "include",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json"
@@ -21,7 +21,8 @@ const LogInForm = () => {
     });
     const reply = await response;
     if (reply.status === 200) {
-      setRedirect(true);
+      //   setRedirect(true);
+      window.location.href = "http://localhost:3000/users/secret";
       dispatch({
         type: "log in"
       });
@@ -49,18 +50,17 @@ const LogInForm = () => {
 
   const handleSubmit = e => {
     //use 2 fxn below to use w/o
-    setRedirect(true);
-    changeValue();
+    // setRedirect(true);
+    // changeValue();
     //use options below for testing
     const data = { email, password };
 
-    // logIn(data);
-    // window.location.href = "http://localhost:3000/users/secret";
+    logIn(data);
   };
 
   return (
     <>
-      {redirect && <Redirect to="/loggedin/dashboard" />}
+      {/* {redirect && <Redirect to="/loggedin/dashboard" />} */}
 
       <section
         role="main"
