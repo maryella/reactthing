@@ -21,11 +21,11 @@ const LogInForm = () => {
     });
     const reply = await response;
     if (reply.status === 200) {
-      //   setRedirect(true);
-      window.location.href = "http://localhost:3000/users/secret";
+      console.log("resp:", response);
       dispatch({
         type: "log in"
       });
+      setRedirect(true);
     }
     if (reply.status !== 200) {
       setBadLogIn(true);
@@ -34,12 +34,12 @@ const LogInForm = () => {
     }
   };
 
-  const changeValue = async () => {
-    dispatch({
-      type: "log in",
-      logged_in: true
-    });
-  };
+  //   const changeValue = async () => {
+  //     dispatch({
+  //       type: "log in",
+  //       logged_in: true
+  //     });
+  //   };
 
   let updateEmail = emailInput => {
     setEmail(emailInput);
@@ -49,10 +49,6 @@ const LogInForm = () => {
   };
 
   const handleSubmit = e => {
-    //use 2 fxn below to use w/o
-    // setRedirect(true);
-    // changeValue();
-    //use options below for testing
     const data = { email, password };
 
     logIn(data);
@@ -60,7 +56,7 @@ const LogInForm = () => {
 
   return (
     <>
-      {/* {redirect && <Redirect to="/loggedin/dashboard" />} */}
+      {redirect && <Redirect to="/loggedin/dashboard" />}
 
       <section
         role="main"
