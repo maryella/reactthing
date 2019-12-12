@@ -8,7 +8,7 @@ import LogOut from "./components/logout";
 import NavBar from "./components/navbar";
 import AddMedForm from "./components/input";
 import SignUpForm from "./components/signup";
-
+import Education from "./components/education";
 const App = () => {
   return (
     <>
@@ -31,7 +31,10 @@ const App = () => {
           </Route>
           <Route path="/logout" component={LogOut}></Route>
           <Route path="/loggedin/dashboard" component={Dashboard}></Route>
-          <Route path="/walkthrough" component={AddMedForm}></Route>
+          <Route path="/walkthrough/:category?">
+            <Education />
+            <AddMedForm />
+          </Route>
         </Wrapper>
       </Router>
     </>

@@ -1,11 +1,10 @@
 import React, { useContext, useState, useEffect } from "react";
 import StateContext from "../context";
-import { loadData } from "../util/loadData";
 import { Link, withRouter } from "react-router-dom";
 
 const Dashboard = () => {
   const context = useContext(StateContext);
-  const [data, setData] = useState("");
+  const [data, setData] = useState([]);
   const getMeds = async () => {
     const response = await fetch("http://localhost:3000/meds", {
       method: "GET",
@@ -15,23 +14,29 @@ const Dashboard = () => {
     return data;
   };
   useEffect(() => {
-    getMeds().then(response => setData(response[0]));
+    getMeds().then(response => setData(response));
   }, []);
-  console.log("data", data.classname);
+  console.log("data", data);
 
   return (
     <div className="container bg-light p-4">
-      {/* <div>
-        {med_data.map(entry => {
-          return (
-            <p>
-              {entry.key} {entry.value}
-            </p>
-          );
-        })}
-      </div> */}
+      <div></div>
       <div>
         <h1>My Medication List</h1>
+        {/* {!data.length ? ( */}
+        <div className="text-center">
+          <h2 className="h4 text-center p-3">
+            Looks like you haven't added any meds yet.
+            <br /> Click below to get started.
+          </h2>
+
+          <Link to="/walkthrough/raas">
+            <button type="button" className="btn btn-outline-danger">
+              Get Started
+            </button>
+          </Link>
+        </div>
+        ) : (
         <table className="table">
           <thead>
             <tr>
@@ -39,24 +44,26 @@ const Dashboard = () => {
               <th>Drug Name</th>
               <th>Dose</th>
               <th>Directions</th>
+              <th>Comments</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>ACE Inhibitor</td>
-              <td>Lisinopril</td>
-              <td>10 mg</td>
-              <td>1 per day</td>
-            </tr>
+            {data.map(entry => {
+              return (
+                <tr key={entry.classname}>
+                  <td>{entry.classname}</td>
+                  <td>{entry.drugname}</td>
+                  <td>{entry.strength}</td>
+                  <td>
+                    Take {entry.quantity} {entry.frequency} {entry.time}
+                  </td>
+                  <td>{entry.comments}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
-        <div className="text-center">
-          <Link to="/walkthrough">
-            <button type="button" className="btn btn-outline-danger">
-              Get Started
-            </button>
-          </Link>
-        </div>
+        )}
       </div>
     </div>
   );

@@ -36,10 +36,14 @@ const NavBar = props => {
               <Link className="nav-item nav-link" to="/contact us">
                 Contact
               </Link>
-              <Link
-                className="nav-item nav-link dashboard"
-                to="/loggedin/dashboard"
-              ></Link>
+              {logged_in && (
+                <Link
+                  className="nav-item nav-link dashboard"
+                  to="/loggedin/dashboard"
+                >
+                  Dashboard
+                </Link>
+              )}
             </div>
           </div>
           <div className="form-inline">

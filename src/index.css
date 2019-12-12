@@ -33,3 +33,8 @@ nav {
 .inputvar {
   font-size: 1em;
 }
+
+.brightred {
+  background-color: #fc5a4e;
+  color: #ffffff;
+}

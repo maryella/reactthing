@@ -1,0 +1,294 @@
+{
+  "raas": {
+    "categoryname": "ACE Inhibitor or ARB",
+    "nextcat": "walkthrough/betab",
+    "drugs": {
+      "lisinopril": {
+        "name": "Lisinopril (Prinivil, Zestril)",
+        "strength": {
+          "2.5": "2.5 mg",
+          "5": "5 mg",
+          "10": "10 mg",
+          "20": "20 mg",
+          "40": "40 mg"
+        },
+        "form": "tablet",
+        "quantity": { "half": "one half", "one": 1, "two": 2 },
+        "frequency": {
+          "qd": "once a day"
+        },
+        "timing": {
+          "ns": "no time specified",
+          "qam": "in the morning",
+          "qpm": "in the evening"
+        },
+        "food": {}
+      },
+      "captopril": {
+        "name": "Captopril (Capoten)",
+        "strength": {
+          "12": "12 mg",
+          "25": "25 mg",
+          "50": "50 mg",
+          "100": "100 mg"
+        },
+        "form": "tablet",
+        "quantity": { "half": "one half", "one": "one", "two": "two" },
+        "frequency": {
+          "tid": "three times a day"
+        },
+        "timing": {
+          "es": "Take one hour before meals"
+        },
+        "food": {}
+      },
+      "ramipril": {
+        "name": "Ramipril (Altace)",
+        "strength": {
+          "1.25": "1.25 mg",
+          "2.5": "2.5 mg",
+          "5": "5 mg",
+          "10": "10 mg"
+        },
+        "form": "capsule",
+        "quantity": { "half": "one half", "one": 1, "two": 2 },
+        "frequency": {
+          "qd": "once a day",
+          "bid": "twice a day"
+        },
+        "timing": {
+          "ns": "no time specified",
+          "qam": "in the morning",
+          "qpm": "in the evening"
+        },
+        "food": {}
+      },
+      "trandolapril": {
+        "name": "Trandolapril (Mavik)",
+        "strength": {
+          "1": "1 mg",
+          "2": "2 mg",
+          "4": "4 mg"
+        },
+        "form": "tablet",
+        "quantity": { "half": "one half", "one": 1, "two": 2 },
+        "frequency": {
+          "qd": "once a day"
+        },
+        "timing": {
+          "ns": "no time specified",
+          "qam": "in the morning",
+          "qpm": "in the evening"
+        },
+        "food": {}
+      },
+      "valsartan": {
+        "name": "Valsartan (Diovan)",
+        "strength": {
+          "40": "40 mg",
+          "80": "80 mg",
+          "160": "160 mg",
+          "320": "320 mg"
+        },
+        "form": "tablet",
+        "quantity": { "half": "one half", "one": 1, "two": 2 },
+        "frequency": {
+          "bid": "twice a day"
+        },
+        "timing": {
+          "ns": "no time specified",
+          "qam": "in the morning",
+          "qpm": "in the evening"
+        },
+        "food": {}
+      }
+    }
+  },
+  "betab": {
+    "categoryname": "Beta Blocker",
+    "nextcat": "walkthrough/statin",
+    "drugs": {
+      "metoprololT": {
+        "name": "Metoprolol Tartrate (Lopressor)",
+        "strength": {
+          "25": "25 mg",
+          "37.5": "37.5 mg",
+          "50": "50 mg",
+          "75": "75 mg",
+          "100": "100 mg"
+        },
+        "form": "tablet",
+        "quantity": { "half": "one half", "one": 1, "two": 2 },
+        "frequency": {
+          "bid": "twice a day"
+        },
+        "timing": {
+          "twm": "with meals"
+        },
+        "food": {}
+      },
+      "metoprololS": {
+        "name": "Metoprolol Succinate (Toprol XL)",
+        "strength": {
+          "25": "25 mg",
+          "50": "50 mg",
+          "100": "100 mg",
+          "200": "200 mg"
+        },
+        "form": "tablet",
+        "quantity": { "half": "one half", "one": 1, "two": 2 },
+        "frequency": {
+          "qd": "once a day"
+        },
+        "timing": {
+          "pwf": "preferably with meals"
+        },
+        "food": {}
+      },
+      "carvedilol": {
+        "name": "Carvedilol (Coreg)",
+        "strength": {
+          "3.125": "3.125 mg",
+          "6.5": "6.5 mg",
+          "12.5": "12.5 mg",
+          "25": "25 mg"
+        },
+        "form": "tablet",
+        "quantity": { "half": "one half", "one": 1, "two": 2 },
+        "frequency": {
+          "bid": "twice a day"
+        },
+        "timing": {
+          "twf": "with food"
+        },
+        "food": {}
+      },
+      "carvediloler": {
+        "name": "Carvedilol Extended Release (Coreg CR)",
+        "strength": {
+          "10": "10 mg",
+          "20": "20 mg",
+          "40": "40 mg",
+          "80": "80 mg"
+        },
+        "form": "capsule",
+        "quantity": { "one": 1, "two": 2 },
+        "frequency": {
+          "qd": "once a day"
+        },
+        "timing": {
+          "twf": "with food"
+        },
+        "food": {}
+      }
+    }
+  },
+  "statin": {
+    "categoryname": "Statin",
+    "nextcat": "walkthrough/antip",
+    "drugs": {
+      "atorvastatin": {
+        "name": "Atorvastatin (Lipitor)",
+        "strength": {
+          "10": "10 mg",
+          "20": "20 mg",
+          "40": "40 mg",
+          "80": "80 mg"
+        },
+        "form": "tablet",
+        "quantity": { "half": "one half", "one": 1, "two": 2 },
+        "frequency": {
+          "qd": "once a day"
+        },
+        "timing": {
+          "qpm": "in the evening",
+          "qam": "in the morning",
+          "ns": "no time specified"
+        },
+        "food": {}
+      },
+      "rosuvastatin": {
+        "name": "Rosuvastatin (Crestor)",
+        "strength": {
+          "5": "5 mg",
+          "10": "10 mg",
+          "20": "20 mg",
+          "40": "40 mg"
+        },
+        "form": "tablet",
+        "quantity": { "half": "one half", "one": 1, "two": 2 },
+        "frequency": {
+          "qd": "once a day"
+        },
+        "timing": {
+          "qpm": "in the evening",
+          "qam": "in the morning",
+          "ns": "no time specified"
+        },
+        "food": {}
+      }
+    }
+  },
+  "antip": {
+    "categoryname": "Antiplatelet",
+    "nextcat": "loggedin/dashboard",
+    "drugs": {
+      "clopidogrel": {
+        "name": "Clopidogrel (Plavix)",
+        "strength": {
+          "75": "75 mg"
+        },
+        "form": "tablet",
+        "quantity": {
+          "half": "one half",
+          "one": "one"
+        },
+        "frequency": {
+          "qd": "once a day"
+        },
+        "timing": {
+          "qpm": "in the evening",
+          "qam": "in the morning",
+          "ns": "no time specified"
+        },
+        "food": {}
+      },
+      "prasugrel": {
+        "name": "Prasugrel (Effient)",
+        "strength": {
+          "5": "5 mg",
+          "10": "10 mg"
+        },
+        "form": "tablet",
+        "quantity": { "half": "one half", "one": 1, "two": 2 },
+        "frequency": {
+          "qd": "once a day"
+        },
+        "timing": {
+          "qpm": "in the evening",
+          "qam": "in the morning",
+          "ns": "no time specified"
+        },
+        "food": {}
+      },
+      "ticagrelor": {
+        "name": "Ticagrelor (Brilinta)",
+        "strength": {
+          "90": "90 mg",
+          "60": "60 mg"
+        },
+        "form": "tablet",
+        "quantity": { "one": 1 },
+        "frequency": {
+          "bid": "twice a day"
+        },
+        "timing": {
+          "qpm": "in the evening",
+          "qam": "in the morning",
+          "ns": "no time specified"
+        },
+        "food": {}
+      }
+    }
+  }
+}

@@ -10,6 +10,7 @@ const SignUpForm = () => {
   const addUser = async data => {
     const response = await fetch("http://localhost:3000/users/signup", {
       method: "POST",
+      credentials: "include",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json"
@@ -21,7 +22,7 @@ const SignUpForm = () => {
       alert("New User Added");
     }
     if (reply.status !== 200) {
-      alert("womp womp");
+      alert("Error");
     }
   };
 
