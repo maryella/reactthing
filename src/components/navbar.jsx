@@ -5,7 +5,7 @@ import LogOut from "./logout";
 
 const NavBar = props => {
   const context = useContext(StateContext);
-  console.log(context[0]);
+
   let { logged_in } = context[0];
   return (
     <>

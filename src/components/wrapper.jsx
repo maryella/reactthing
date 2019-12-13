@@ -1,10 +1,12 @@
-import React, { useReducer } from "react";
-import { StateProvider } from "../context/index.js";
+import React, { useReducer, useEffect, useContext } from "react";
+
+import { StateProvider } from "../context";
 
 const Wrapper = props => {
   const initialState = {
     logged_in: false
   };
+  const localState = localStorage.getItem("loggedI");
   const LogInReducer = (state, action) => {
     switch (action.type) {
       case "log in":
@@ -20,9 +22,17 @@ const Wrapper = props => {
     }
   };
 
+  let loggedIn = localStorage.getItem("loggedIn");
+
+  useEffect(() => {
+    localStorage.setItem("loggedIn", JSON.stringify(loggedIn));
+  }, [loggedIn]);
+
   return (
     <>
-      <StateProvider value={useReducer(LogInReducer, initialState)}>
+      <StateProvider
+        value={useReducer(LogInReducer, localState || initialState)}
+      >
         {props.children}
       </StateProvider>
     </>
