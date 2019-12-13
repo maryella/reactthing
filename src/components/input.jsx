@@ -3,7 +3,7 @@ import { Redirect, useParams } from "react-router-dom";
 
 const Druglist = require("../util/drugs.json");
 
-const AddMedForm = () => {
+const AddMedForm = ({ category }) => {
   const [classname, setClassName] = useState("");
   const [drugname, setDrugName] = useState("");
   const [strength, setStrength] = useState("");
@@ -15,7 +15,7 @@ const AddMedForm = () => {
   const [comments, setComments] = useState("");
   const [redirect, setRedirect] = useState(false);
 
-  const { category } = useParams();
+  //const { category } = useParams();
   const drugcategory = Druglist[category];
 
   const nextroute = `/${drugcategory.nextcat}`;
@@ -24,7 +24,6 @@ const AddMedForm = () => {
   const mappeddrugs = Object.entries(drugsincategory);
 
   let activedrugname = drugname;
-  console.log("active drug", activedrugname);
   const addMed = async data => {
     const response = await fetch("http://localhost:3000/meds/addmed", {
       method: "POST",

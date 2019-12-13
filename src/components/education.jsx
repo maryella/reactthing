@@ -3,8 +3,7 @@ import { useParams } from "react-router-dom";
 
 const Druglist = require("../util/drugs.json");
 
-const Education = () => {
-  const { category } = useParams();
+const Education = ({ category }) => {
   const drugcategory = Druglist[category];
 
   const classname = drugcategory.categoryname;

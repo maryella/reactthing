@@ -32,10 +32,20 @@ const App = () => {
           </Route>
           <Route path="/logout" component={LogOut}></Route>
           <Route path="/loggedin/dashboard" component={Dashboard}></Route>
-          <Route path="/walkthrough/:category?">
-            <Education />
-            <AddMedForm />
-          </Route>
+          <Route
+            path="/walkthrough/:category?"
+            render={({ match }) => {
+              return (
+                <>
+                  <Education category={match.params.category} />
+                  <AddMedForm
+                    category={match.params.category}
+                    key={match.params.category}
+                  />
+                </>
+              );
+            }}
+          ></Route>
           <Footer />
         </Wrapper>
       </Router>
