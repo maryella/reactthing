@@ -9,10 +9,10 @@ const NavBar = props => {
   let { logged_in } = context[0];
   return (
     <>
-      <div>
+      <div className="mb-2">
         <nav className="navbar sticky-top navbar-light navbar-expand-lg navbar-dark">
-          <Link className="navbar-brand homelogo" to="/">
-            LOGO
+          <Link className="navbar-brand homelogo logo" to="/">
+            i-Survived
           </Link>
           <button
             className="navbar-toggler"

@@ -9,6 +9,7 @@ import NavBar from "./components/navbar";
 import AddMedForm from "./components/input";
 import SignUpForm from "./components/signup";
 import Education from "./components/education";
+import Footer from "./components/footer";
 const App = () => {
   return (
     <>
@@ -35,6 +36,7 @@ const App = () => {
             <Education />
             <AddMedForm />
           </Route>
+          <Footer />
         </Wrapper>
       </Router>
     </>

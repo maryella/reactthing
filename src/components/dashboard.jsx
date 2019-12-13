@@ -1,9 +1,8 @@
-import React, { useContext, useState, useEffect } from "react";
-import StateContext from "../context";
-import { Link, withRouter } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
-  const context = useContext(StateContext);
   const [data, setData] = useState([]);
   const getMeds = async () => {
     const response = await fetch("http://localhost:3000/meds", {
@@ -23,46 +22,57 @@ const Dashboard = () => {
       <div></div>
       <div>
         <h1>My Medication List</h1>
-        {/* {!data.length ? ( */}
-        <div className="text-center">
-          <h2 className="h4 text-center p-3">
-            Looks like you haven't added any meds yet.
-            <br /> Click below to get started.
-          </h2>
+        {!data.length ? (
+          <div className="text-center p-5">
+            <h2 className="h4  p-5">
+              Looks like you haven't added any meds yet.
+              <br /> Click below to get started.
+            </h2>
 
-          <Link to="/walkthrough/raas">
-            <button type="button" className="btn btn-outline-danger">
-              Get Started
-            </button>
-          </Link>
-        </div>
+            <Link to="/walkthrough/raas">
+              <button type="button" className="btn btn-outline-danger btn-lg">
+                Get Started
+              </button>
+            </Link>
+          </div>
         ) : (
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Class Name</th>
-              <th>Drug Name</th>
-              <th>Dose</th>
-              <th>Directions</th>
-              <th>Comments</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map(entry => {
-              return (
-                <tr key={entry.classname}>
-                  <td>{entry.classname}</td>
-                  <td>{entry.drugname}</td>
-                  <td>{entry.strength}</td>
-                  <td>
-                    Take {entry.quantity} {entry.frequency} {entry.time}
-                  </td>
-                  <td>{entry.comments}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Class Name</th>
+                <th>Drug Name</th>
+                <th>Dose</th>
+                <th>Directions</th>
+                <th>Comments</th>
+                <th> </th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.map(entry => {
+                return (
+                  <tr key={entry.drugname}>
+                    <td>{entry.classname}</td>
+                    <td>{entry.drugname}</td>
+                    <td>{entry.strength}</td>
+                    <td>
+                      Take {entry.quantity} {entry.frequency} {entry.time}
+                    </td>
+                    <td>{entry.comments}</td>
+                    <td>
+                      <Link>
+                        <button
+                          type="button"
+                          className="btn btn-outline-danger btn-sm"
+                        >
+                          Update
+                        </button>
+                      </Link>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
         )}
       </div>
     </div>

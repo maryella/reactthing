@@ -1,21 +1,13 @@
-import React, { useContext, useState, useEffect } from "react";
-import StateContext from "../context";
+import React from "react";
+import { useParams } from "react-router-dom";
+
+const Druglist = require("../util/drugs.json");
 
 const Education = () => {
-  //   const context = useContext(StateContext);
-  //   const [data, setData] = useState([]);
-  //   const getInfo = async () => {
-  //     const response = await fetch("http://localhost:3000/meds", {
-  //       method: "GET",
-  //       credentials: "include"
-  //     });
-  //     const data = response.json();
-  //     return data;
-  //   };
-  //   useEffect(() => {
-  //     getInfo().then(response => setData(response));
-  //   }, []);
-  const classname = "Beta Blockers";
+  const { category } = useParams();
+  const drugcategory = Druglist[category];
+
+  const classname = drugcategory.categoryname;
   const info = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
   minim veniam, quis nostrud exercitation ullamco laboris nisi ut

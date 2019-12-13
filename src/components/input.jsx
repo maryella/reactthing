@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Link, Redirect, useParams } from "react-router-dom";
-// import { Druglist } from "../util/drugs";
+import { Redirect, useParams } from "react-router-dom";
+
 const Druglist = require("../util/drugs.json");
 
 const AddMedForm = () => {
   const [classname, setClassName] = useState("");
   const [drugname, setDrugName] = useState("");
   const [strength, setStrength] = useState("");
-  const [form, setForm] = useState("");
+  //eventually add dosage form to data
+  // const [form, setForm] = useState("");
   const [quantity, setQuantity] = useState("");
   const [frequency, setFrequency] = useState("");
   const [timing, setTiming] = useState("");
@@ -23,7 +24,7 @@ const AddMedForm = () => {
   const mappeddrugs = Object.entries(drugsincategory);
 
   let activedrugname = drugname;
-
+  console.log("active drug", activedrugname);
   const addMed = async data => {
     const response = await fetch("http://localhost:3000/meds/addmed", {
       method: "POST",
@@ -42,18 +43,13 @@ const AddMedForm = () => {
       alert("Error");
     }
   };
-  // const updateClass = setClassName(drugcategory);
-  useEffect(() => {
-    // Update the document title using the browser API
-    setClassName(drugcategory.categoryname);
-  });
 
   const updateDrugName = drugnameInput => {
     setDrugName(drugnameInput);
+    setClassName(drugcategory.categoryname);
   };
   const updateStrength = strengthInput => {
     setStrength(strengthInput);
-    setForm(drugsincategory[activedrugname]["form"]);
   };
   const updateQuantity = quantityInput => {
     setQuantity(quantityInput);
@@ -87,13 +83,14 @@ const AddMedForm = () => {
       {redirect && <Redirect to={nextroute} />}
       <div className="container bg-light p-4">
         <div className="">
-          <header className="mb-3 h3">{drugcategory.categoryname}</header>
+          <header className="mb-3 h3">
+            Add a {drugcategory.categoryname} to Your List
+          </header>
           <div className="form-group row">
             <label className="col-form col-sm-2 h4">Name:</label>
             <div className="col">
               <select
                 className="form-control"
-                aria-placeholder=""
                 name="drugname"
                 onChange={e => updateDrugName(e.target.value)}
                 value={drugname}
@@ -122,7 +119,7 @@ const AddMedForm = () => {
                 <div className="col">
                   <select
                     className="form-control"
-                    aria-placeholder=""
+                    ariaLabel=""
                     name="strength"
                     onChange={e => updateStrength(e.target.value)}
                     value={strength}
@@ -147,7 +144,7 @@ const AddMedForm = () => {
                 <div className="input-group col">
                   <select
                     className="form-control"
-                    aria-placeholder=""
+                    ariaLabel=""
                     name="quantity"
                     onChange={e => updateQuantity(e.target.value)}
                     value={quantity}
@@ -165,7 +162,7 @@ const AddMedForm = () => {
                   </select>
                   <select
                     className="form-control"
-                    aria-placeholder=""
+                    ariaLabel=""
                     name="frequency"
                     onChange={e => updateFrequency(e.target.value)}
                     value={frequency}
@@ -183,7 +180,7 @@ const AddMedForm = () => {
                   </select>
                   <select
                     className="form-control"
-                    aria-placeholder=""
+                    ariaLabel=""
                     name="timing"
                     onChange={e => updateTiming(e.target.value)}
                     value={timing}

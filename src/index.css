@@ -1,11 +1,9 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fcd5d4;
+  background-color: #cc0000;
 }
 
 code {
@@ -14,12 +12,12 @@ code {
 }
 
 nav {
-  background-color: #fc5a4e;
+  background-color: #cc0000;
 }
 
 .homelogo {
-  font-weight: bold;
-  font-size: 2.5em;
+  font-size: 2.2em;
+  font-family: "Alatsi", sans-serif;
 }
 
 .dashboard {
@@ -35,6 +33,19 @@ nav {
 }
 
 .brightred {
-  background-color: #fc5a4e;
+  background-color: #cc0000;
   color: #ffffff;
+}
+
+.top {
+  font-family: "Bebas Neue";
+  font-size: 4em;
+}
+
+.eggshell {
+  background-color: #faf9f0;
+}
+
+.footer {
+  opacity: 0.75;
 }

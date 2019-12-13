@@ -46,54 +46,56 @@ const SignUpForm = () => {
   return (
     <>
       {redirect && <Redirect to="/login" />}
-      <section
-        role="main"
-        className="container position-relative p-4 w-85 bg-light"
-      >
+      <section role="main" className="container position-relative p-4 w-85">
         <div className="w-75 m-auto">
-          <header className="mb-3 h2">Sign Up</header>
-          <div className="form-group row">
-            <label className="col-form col-sm-2 h4">Name:</label>
-            <div className="col">
-              <input
-                type="text"
-                className="form-control"
-                onChange={e => updateName(e.target.value)}
-                value={user_name}
-              />
+          <div className="card p-4">
+            <header className="mb-2 h1 text-center font-weight-bold">
+              Sign Up
+            </header>
+            <hr />
+            <div className="form-group row">
+              <div className="col">
+                <label className="h4">Name:</label>
+                <input
+                  type="text"
+                  className="form-control palegray"
+                  onChange={e => updateName(e.target.value)}
+                  value={user_name}
+                />
+              </div>
             </div>
-          </div>
 
-          <div className="form-group row">
-            <label className="col-form col-sm-2 h4">Email:</label>
-            <div className="col">
-              <input
-                type="email"
-                className="form-control"
-                onChange={e => updateEmail(e.target.value)}
-                value={email}
-              />
+            <div className="form-group row">
+              <div className="col">
+                <label className="h4">Email:</label>
+                <input
+                  type="email"
+                  className="form-control"
+                  onChange={e => updateEmail(e.target.value)}
+                  value={email}
+                />
+              </div>
             </div>
-          </div>
-          <div className="form-group row">
-            <label className="col-form col-sm-2 h4">Password:</label>
-            <div className="col">
-              <input
-                type="password"
-                className="form-control"
-                onChange={e => updatePassword(e.target.value)}
-                value={password}
-              />
+            <div className="form-group row">
+              <div className="col">
+                <label className="h4">Password:</label>
+                <input
+                  type="password"
+                  className="form-control"
+                  onChange={e => updatePassword(e.target.value)}
+                  value={password}
+                />
+              </div>
             </div>
-          </div>
-          <div className="text-center">
-            <button
-              type="button"
-              className="btn btn-outline-danger"
-              onClick={handleSubmit}
-            >
-              Submit
-            </button>
+            <div className="text-center">
+              <button
+                type="button"
+                className="btn btn-outline-danger"
+                onClick={handleSubmit}
+              >
+                Submit
+              </button>
+            </div>
           </div>
         </div>
       </section>

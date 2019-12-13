@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import StateContext from "../context";
-import { Redirect, Link, withRouter } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 
 const LogInForm = () => {
   const [email, setEmail] = useState("");
@@ -21,7 +21,6 @@ const LogInForm = () => {
     });
     const reply = await response;
     if (reply.status === 200) {
-      console.log("resp:", response);
       dispatch({
         type: "log in"
       });
@@ -33,13 +32,6 @@ const LogInForm = () => {
       setPassword("");
     }
   };
-
-  //   const changeValue = async () => {
-  //     dispatch({
-  //       type: "log in",
-  //       logged_in: true
-  //     });
-  //   };
 
   let updateEmail = emailInput => {
     setEmail(emailInput);
@@ -58,35 +50,36 @@ const LogInForm = () => {
     <>
       {redirect && <Redirect to="/loggedin/dashboard" />}
 
-      <section
-        role="main"
-        className="container position-relative p-4 w-85 bg-light"
-      >
-        <div className="w-50 position-relative m-auto text-center">
-          <h1 className="h2 mb-3 font-weight-normal">Log In</h1>
+      <section role="main" className="container position-relative p-4 w-85">
+        <div className="card p-4 w-50 position-relative m-auto text-center">
+          <h1 className="h2 mb-3 font-weight-bold">Log In</h1>
           {badlogin && (
             <div>
               Sorry, something's not right. <br /> Please try again.
             </div>
           )}
           <label className="sr-only">Email address</label>
-          <input
-            type="email"
-            id="inputEmail"
-            className="form-control"
-            placeholder="Email address"
-            onChange={e => updateEmail(e.target.value)}
-            required
-          ></input>
-          <label className="sr-only">Password</label>
-          <input
-            type="password"
-            id="inputPassword"
-            className="form-control"
-            placeholder="Password"
-            onChange={e => updatePassword(e.target.value)}
-            required
-          ></input>
+          <div className="p-2">
+            <input
+              type="email"
+              id="inputEmail"
+              className="form-control"
+              placeholder="Email address"
+              onChange={e => updateEmail(e.target.value)}
+              required
+            ></input>
+          </div>
+          <div className="p-2">
+            <label className="sr-only">Password</label>
+            <input
+              type="password"
+              id="inputPassword"
+              className="form-control"
+              placeholder="Password"
+              onChange={e => updatePassword(e.target.value)}
+              required
+            ></input>
+          </div>
           <div className="p-3">
             <button
               onClick={handleSubmit}

@@ -1,6 +1,6 @@
 {
   "raas": {
-    "categoryname": "ACE Inhibitor or ARB",
+    "categoryname": "ACE Inhibitor (or ARB)",
     "nextcat": "walkthrough/betab",
     "drugs": {
       "lisinopril": {
