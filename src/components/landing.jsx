@@ -16,7 +16,7 @@ const Landing = () => {
         <div className="container  p-3">
           <div className="row">
             <div className="col-md-4">
-              <div class="card p-4 bg-light">
+              <div className="card p-4 bg-light">
                 <h2 className="text-center">Learn More About Your Meds</h2>
                 <p className="text-justify">
                   After a heart attack, your doctor will likely prescribe
@@ -34,7 +34,7 @@ const Landing = () => {
               </div>
             </div>
             <div className="col-md-4">
-              <div class="card p-4 bg-light">
+              <div className="card p-4 bg-light">
                 <h2 className="text-center">Double Checking Your Doctor</h2>
                 <p className="text-justify">
                   There are at least 5 types of medication that have been shown
@@ -51,7 +51,7 @@ const Landing = () => {
               </div>
             </div>
             <div className="col-md-4">
-              <div class="card p-4 bg-light">
+              <div className="card p-4 bg-light">
                 <h2 className="text-center">
                   Keep Track of Your New Medications
                 </h2>

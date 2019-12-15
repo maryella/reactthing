@@ -55,7 +55,8 @@ const Dashboard = () => {
                     <td>{entry.drugname}</td>
                     <td>{entry.strength}</td>
                     <td>
-                      Take {entry.quantity} {entry.frequency} {entry.time}
+                      Take {entry.quantity} {entry.formulation}{" "}
+                      {entry.frequency} {entry.time}
                     </td>
                     <td>{entry.comments}</td>
                     <td>

@@ -8,7 +8,7 @@ const AddMedForm = ({ category }) => {
   const [drugname, setDrugName] = useState("");
   const [strength, setStrength] = useState("");
   //eventually add dosage form to data
-  // const [form, setForm] = useState("");
+  const [formulation, setFormulation] = useState("");
   const [quantity, setQuantity] = useState("");
   const [frequency, setFrequency] = useState("");
   const [timing, setTiming] = useState("");
@@ -24,6 +24,7 @@ const AddMedForm = ({ category }) => {
   const mappeddrugs = Object.entries(drugsincategory);
 
   let activedrugname = drugname;
+
   const addMed = async data => {
     const response = await fetch("http://localhost:3000/meds/addmed", {
       method: "POST",
@@ -36,7 +37,6 @@ const AddMedForm = ({ category }) => {
     });
     const reply = await response;
     if (reply.status === 200) {
-      alert("Med Successfully Added");
     }
     if (reply.status !== 200) {
       alert("Error");
@@ -49,6 +49,9 @@ const AddMedForm = ({ category }) => {
   };
   const updateStrength = strengthInput => {
     setStrength(strengthInput);
+    if (activedrugname.length > 0) {
+      setFormulation(drugsincategory[activedrugname]["form"]);
+    }
   };
   const updateQuantity = quantityInput => {
     setQuantity(quantityInput);
@@ -70,7 +73,8 @@ const AddMedForm = ({ category }) => {
       quantity,
       frequency,
       timing,
-      comments
+      comments,
+      formulation
     };
 
     addMed(data);
@@ -107,7 +111,7 @@ const AddMedForm = ({ category }) => {
             </div>
           </div>
           {activedrugname && (
-            // console.log(
+            // {console.log(
             //   "active drug props",
             //   typeof drugsincategory[activedrugname]["strength"]
             // )}

@@ -7,6 +7,7 @@ import LogInForm from "./components/login";
 import LogOut from "./components/logout";
 import NavBar from "./components/navbar";
 import AddMedForm from "./components/input";
+import UpdateMedForm from "./components/update";
 import SignUpForm from "./components/signup";
 import Education from "./components/education";
 import Footer from "./components/footer";
@@ -43,6 +44,17 @@ const App = () => {
                     key={match.params.category}
                   />
                 </>
+              );
+            }}
+          ></Route>
+          <Route
+            path="/update/:category?"
+            render={({ match }) => {
+              return (
+                <UpdateMedForm
+                  category={match.params.category}
+                  key={match.params.category}
+                />
               );
             }}
           ></Route>

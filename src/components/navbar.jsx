@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link, withRouter } from "react-router-dom";
 import StateContext from "../context";
 import LogOut from "./logout";
@@ -7,6 +7,33 @@ const NavBar = props => {
   const context = useContext(StateContext);
 
   let { logged_in } = context[0];
+  console.log("context", logged_in);
+
+  const [value, dispatch] = useContext(StateContext);
+  const verifylogin = async data => {
+    const response = await fetch("http://localhost:3000/verify", {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
+
+    const reply = await response;
+    if (reply.status === 200) {
+      dispatch({
+        type: "log in"
+      });
+    }
+    if (reply.status !== 200) {
+      console.log("logout error");
+    }
+  };
+  useEffect(() => {
+    verifylogin();
+  }, [0]);
   return (
     <>
       <div className="mb-2">

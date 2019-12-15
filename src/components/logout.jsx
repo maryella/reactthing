@@ -14,11 +14,13 @@ const LogOut = () => {
       },
       body: JSON.stringify(data)
     });
+
     const reply = await response;
     if (reply.status === 200) {
       dispatch({
         type: "log out"
       });
+
       window.location.href = "/";
     }
     if (reply.status !== 200) {
@@ -26,15 +28,8 @@ const LogOut = () => {
     }
   };
 
-  //   const changeValue = async () => {
-  //     dispatch({
-  //       type: "log out"
-  //     });
-  //   };
-
   const handleSubmit = e => {
     logOut();
-    window.location.href = "/";
   };
 
   return (
