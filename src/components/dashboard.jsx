@@ -60,7 +60,7 @@ const Dashboard = () => {
                     </td>
                     <td>{entry.comments}</td>
                     <td>
-                      <Link>
+                      <Link to={entry.category}>
                         <button
                           type="button"
                           className="btn btn-outline-danger btn-sm"

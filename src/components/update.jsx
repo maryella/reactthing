@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { Redirect, useParams } from "react-router-dom";
+import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
 
 const Druglist = require("../util/drugs.json");
 
-const AddMedForm = ({ category }) => {
+const UpdateForm = ({ category }) => {
   const [classname, setClassName] = useState("");
   const [drugname, setDrugName] = useState("");
   const [strength, setStrength] = useState("");
-  const [update_route, setUpdateRoute] = useState("");
   const [formulation, setFormulation] = useState("");
   const [quantity, setQuantity] = useState("");
   const [frequency, setFrequency] = useState("");
@@ -15,18 +14,15 @@ const AddMedForm = ({ category }) => {
   const [comments, setComments] = useState("");
   const [redirect, setRedirect] = useState(false);
 
-  //const { category } = useParams();
   const drugcategory = Druglist[category];
-
-  const nextroute = `/${drugcategory.nextcat}`;
 
   const drugsincategory = drugcategory.drugs;
   const mappeddrugs = Object.entries(drugsincategory);
 
   let activedrugname = drugname;
 
-  const addMed = async data => {
-    const response = await fetch("http://localhost:3000/meds/addmed", {
+  const updateMed = async data => {
+    const response = await fetch("http://localhost:3000/meds/update", {
       method: "POST",
       credentials: "include",
       headers: {
@@ -43,8 +39,6 @@ const AddMedForm = ({ category }) => {
     }
   };
 
-  useEffect(() => {}, [0]);
-
   const updateDrugName = drugnameInput => {
     setDrugName(drugnameInput);
     setClassName(drugcategory.categoryname);
@@ -52,7 +46,6 @@ const AddMedForm = ({ category }) => {
   const updateStrength = strengthInput => {
     setStrength(strengthInput);
     if (activedrugname.length > 0) {
-      setUpdateRoute(`/update/${category}`);
       setFormulation(drugsincategory[activedrugname]["form"]);
     }
   };
@@ -77,21 +70,20 @@ const AddMedForm = ({ category }) => {
       frequency,
       timing,
       comments,
-      formulation,
-      update_route
+      formulation
     };
 
-    addMed(data);
+    updateMed(data);
     setRedirect(true);
   };
 
   return (
     <>
-      {redirect && <Redirect to={nextroute} />}
+      {redirect && <Redirect to="/loggedin/dashboard" />}
       <div className="container bg-light p-4">
         <div className="">
           <header className="mb-3 h3">
-            Add a {drugcategory.categoryname} to Your List
+            Update Your {drugcategory.categoryname}
           </header>
           <div className="form-group row">
             <label className="col-form col-sm-2 h4">Name:</label>
@@ -225,7 +217,7 @@ const AddMedForm = ({ category }) => {
               className="btn btn-outline-danger"
               onClick={handleSubmit}
             >
-              Add to My List
+              Submit
             </button>
           </div>
         </div>
@@ -234,4 +226,4 @@ const AddMedForm = ({ category }) => {
   );
 };
 
-export default AddMedForm;
+export default UpdateForm;
