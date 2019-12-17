@@ -29,7 +29,7 @@ const Dashboard = () => {
               <br /> Click below to get started.
             </h2>
 
-            <Link to="/walkthrough/raas">
+            <Link to="/walkthroughintro">
               <button type="button" className="btn btn-outline-danger btn-lg">
                 Get Started
               </button>

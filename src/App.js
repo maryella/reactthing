@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Wrapper from "./components/wrapper";
 import Dashboard from "./components/dashboard";
 import Landing from "./components/landing";
+import LaunchPage from "./components/launch.jsx";
 import LogInForm from "./components/login";
 import LogOut from "./components/logout";
 import NavBar from "./components/navbar";
@@ -33,8 +34,10 @@ const App = () => {
           </Route>
           <Route path="/logout" component={LogOut}></Route>
           <Route path="/loggedin/dashboard" component={Dashboard}></Route>
+          <Route path="/walkthroughintro" strict component={LaunchPage}></Route>
           <Route
             path="/walkthrough/:category?"
+            strict
             render={({ match }) => {
               return (
                 <>
