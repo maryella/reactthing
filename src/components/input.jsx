@@ -43,16 +43,18 @@ const AddMedForm = ({ category }) => {
     }
   };
 
-  useEffect(() => {}, [0]);
+  useEffect(() => {
+    setClassName(drugcategory.categoryname);
+    setUpdateRoute(`/update/${category}`);
+  }, [drugcategory.categoryname, category]);
 
+  console.log("classname", update_route);
   const updateDrugName = drugnameInput => {
     setDrugName(drugnameInput);
-    setClassName(drugcategory.categoryname);
   };
   const updateStrength = strengthInput => {
     setStrength(strengthInput);
     if (activedrugname.length > 0) {
-      setUpdateRoute(`/update/${category}`);
       setFormulation(drugsincategory[activedrugname]["form"]);
     }
   };
@@ -105,7 +107,7 @@ const AddMedForm = ({ category }) => {
                 <option value=""></option>
                 {mappeddrugs.map(drug => {
                   return (
-                    <option key={drug[1]["name"]} value={drug[0]}>
+                    <option key={drug[0]} value={drug[0]}>
                       {drug[1]["name"]}
                     </option>
                   );

@@ -60,7 +60,7 @@ const Dashboard = () => {
                     </td>
                     <td>{entry.comments}</td>
                     <td>
-                      <Link to={entry.category}>
+                      <Link to={entry.updateroute}>
                         <button
                           type="button"
                           className="btn btn-outline-danger btn-sm"
