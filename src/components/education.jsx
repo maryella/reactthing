@@ -10,7 +10,7 @@ const Education = ({ category }) => {
 
   return (
     <>
-      <div className="container bg-light p-4">
+      <div className="container bg-light p-4 rounded">
         <div>
           <h1>{classname}</h1>
         </div>

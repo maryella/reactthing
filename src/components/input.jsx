@@ -90,9 +90,9 @@ const AddMedForm = ({ category }) => {
   return (
     <>
       {redirect && <Redirect to={nextroute} />}
-      <div className="container bg-light p-4">
+      <div className="container pale p-4 rounded mt-2">
         <div className="">
-          <header className="mb-3 h3">
+          <header className="mb-3 h3 text-center">
             Add a {drugcategory.categoryname} to Your List
           </header>
           <div className="form-group row">

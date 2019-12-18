@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const FaqPage = () => {
   return (
     <>
-      <div className="container bg-light p-4">
+      <div className="container bg-light p-4 rounded">
         <div>
           <h1 className="text-center m-2">Frequently Asked Questions</h1>
         </div>

@@ -18,10 +18,10 @@ const Dashboard = () => {
   console.log("data", data);
 
   return (
-    <div className="container bg-light p-4">
+    <div className="container bg-light p-4 rounded">
       <div></div>
       <div>
-        <h1>My Medication List</h1>
+        <h1 className="font-weight-bold mb-3">My Medication List</h1>
         {!data.length ? (
           <div className="text-center p-5">
             <h2 className="h4  p-5">

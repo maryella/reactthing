@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const AboutPage = () => {
   return (
     <>
-      <div className="container bg-light p-4">
+      <div className="container bg-light p-4 rounded">
         <div>
           <h1 className="text-center m-2">About This Project</h1>
         </div>

@@ -80,8 +80,13 @@ const NavBar = props => {
               </>
             ) : (
               <>
+                <div className="navbar-nav ">
+                  <Link className="nav-item nav-link dashboard" to="/signup">
+                    Sign Up
+                  </Link>
+                </div>
                 <Link className="nav-item nav-link" to="/login">
-                  <button type="button" className="btn btn-light">
+                  <button type="button" className="btn btn-outline-light">
                     Log In
                   </button>
                 </Link>
