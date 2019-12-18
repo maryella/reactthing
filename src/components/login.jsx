@@ -10,7 +10,7 @@ const LogInForm = () => {
   const [value, dispatch] = useContext(StateContext);
 
   const logIn = async data => {
-    const response = await fetch("http://159.89.239.126:5000/users/login", {
+    const response = await fetch("http://159.89.239.126/users/login", {
       method: "POST",
       credentials: "include",
       headers: {
