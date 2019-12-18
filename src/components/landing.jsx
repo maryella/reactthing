@@ -66,7 +66,7 @@ const Landing = () => {
                   explanation for other providers who notice you're not taking
                   one of these important drugs.
                 </p>
-                <p className="text-center mt-3">
+                <p className="text-center">
                   <Link to="/signup">
                     <button type="button" className="btn btn-outline-danger">
                       Sign Up
