@@ -12,7 +12,8 @@ const Education = ({ category }) => {
     <>
       <div className="container bg-light p-4 rounded">
         <div>
-          <h1>{classname}</h1>
+          <h1 className="contentheader mb-3">{classname}</h1>
+          <hr />
         </div>
         {/* Use DSIH to allow for markup in JSON data */}
         <div dangerouslySetInnerHTML={{ __html: info }} />

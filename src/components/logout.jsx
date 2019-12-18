@@ -35,7 +35,11 @@ const LogOut = () => {
   return (
     <>
       <div>
-        <button onClick={handleSubmit} type="button" className="btn btn-light">
+        <button
+          onClick={handleSubmit}
+          type="button"
+          className="btn btn-outline-light"
+        >
           Log Out
         </button>
       </div>

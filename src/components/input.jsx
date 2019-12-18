@@ -92,11 +92,13 @@ const AddMedForm = ({ category }) => {
       {redirect && <Redirect to={nextroute} />}
       <div className="container pale p-4 rounded mt-2">
         <div className="">
-          <header className="mb-3 h3 text-center">
-            Add a {drugcategory.categoryname} to Your List
+          <header className="mt-3 mb-5 h3 text-center contentheader">
+            Add Your {drugcategory.categoryname}
           </header>
           <div className="form-group row">
-            <label className="col-form col-sm-2 h4">Name:</label>
+            <label className="col-form col-sm-2 h4 font-weight-bold">
+              Drug Name:
+            </label>
             <div className="col">
               <select
                 className="form-control"
@@ -123,7 +125,7 @@ const AddMedForm = ({ category }) => {
             // )}
             <div>
               <div className="form-group row">
-                <label className="col-form col-sm-2 h4">Strength:</label>
+                <label className="col-form col-sm-2 h4 ">Strength:</label>
 
                 <div className="col">
                   <select
@@ -148,7 +150,9 @@ const AddMedForm = ({ category }) => {
               </div>
 
               <div className="form-group row">
-                <label className="col-form col-sm-2 h4">Directions:</label>
+                <label className="col-form col-sm-2 h4 text-align-right">
+                  Directions:
+                </label>
 
                 <div className="input-group col">
                   <select
@@ -211,7 +215,9 @@ const AddMedForm = ({ category }) => {
           )}
 
           <div className="form-group row">
-            <label className="col-form col-sm-2 h4">Comments:</label>
+            <label className="col-form col-sm-2 h4 font-weight-bold">
+              Comments:
+            </label>
 
             <div className="col">
               <textarea
