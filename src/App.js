@@ -1,7 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Wrapper from "./components/wrapper";
+import AboutPage from "./components/about.jsx";
 import Dashboard from "./components/dashboard";
+import FaqPage from "./components/faq.jsx";
 import Landing from "./components/landing";
 import LaunchPage from "./components/launch.jsx";
 import LogInForm from "./components/login";
@@ -26,6 +28,12 @@ const App = () => {
           <Route exact path="/home">
             <Landing />
           </Route>
+          <Route path="/about">
+            <AboutPage />
+          </Route>
+          <Route path="/faq">
+            <FaqPage />
+          </Route>
           <Route path="/login">
             <LogInForm />
           </Route>
@@ -34,10 +42,9 @@ const App = () => {
           </Route>
           <Route path="/logout" component={LogOut}></Route>
           <Route path="/loggedin/dashboard" component={Dashboard}></Route>
-          <Route path="/walkthroughintro" strict component={LaunchPage}></Route>
+          <Route path="/walkthroughintro" component={LaunchPage}></Route>
           <Route
             path="/walkthrough/:category?"
-            strict
             render={({ match }) => {
               return (
                 <>

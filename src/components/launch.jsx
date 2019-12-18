@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const LaunchPage = ({ category }) => {
+const LaunchPage = () => {
   return (
     <>
       <div className="container bg-light p-4">
