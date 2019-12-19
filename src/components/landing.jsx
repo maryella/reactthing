@@ -38,7 +38,7 @@ const Landing = () => {
             <div className="col-md-4">
               <div className="card p-4 bg-light shadowbox">
                 <h2 className="text-center contentheader">
-                  Double Checking Your Doctor
+                  Make Sure You Get What You Need
                 </h2>
                 <p className="text-justify">
                   There are at least 5 types of medication that have been shown

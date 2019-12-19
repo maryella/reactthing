@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect, useContext } from "react";
+import React, { useReducer } from "react";
 
 import { StateProvider } from "../context";
 const Wrapper = props => {

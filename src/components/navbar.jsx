@@ -3,7 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import StateContext from "../context";
 import LogOut from "./logout";
 
-const NavBar = props => {
+const NavBar = () => {
   const context = useContext(StateContext);
 
   let { logged_in } = context[0];
